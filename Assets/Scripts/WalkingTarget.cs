@@ -22,7 +22,7 @@ public class WalkingTarget : MonoBehaviour {
     {
         navMesh = gameObject.GetComponent<NavMeshAgent>();
         health = healthImages.Length;
-        SetRandomNavMeshAgintDestination();// рандомное движение ходячих объектов
+        SetRandomNavMeshAgintDestination();
     }
 
     private void Update()
@@ -37,7 +37,6 @@ public class WalkingTarget : MonoBehaviour {
 
     private void SetRandomNavMeshAgintDestination()
     {
-        // выбор нового вектора движения
         int waypointIndex = Random.Range(0, wayPoints.Length);
         curDestination = wayPoints[waypointIndex];
         navMesh.SetDestination(curDestination.position);
@@ -50,13 +49,13 @@ public class WalkingTarget : MonoBehaviour {
             healthImages[i].SetActive(false);
         }
         health -= Weapon.damageWeapon ;
-        if (health <= 0) // если не осталось жизней, вызываем анимацию разрушения
+        if (health <= 0) 
         {
             Transform curTransform = transform;
             GameObject go = Instantiate(destroyedTargetPrefab, curTransform.position, curTransform.rotation);
             Destroy(gameObject);
             Destroy(go, 5.0f);
-            StartSecondLevel.counter++; // +1 труп))
+            StartSecondLevel.counter++; 
          }
     }
 }

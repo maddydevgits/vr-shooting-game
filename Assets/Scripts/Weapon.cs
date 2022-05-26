@@ -20,7 +20,7 @@ public class Weapon {
     {
         projectileLineRenderer.positionCount = 2;
     }
-    // обработка выстрела по статичному объекту
+    
     public void Shoot(Vector3 shootPoint, Vector3 force, Rigidbody targetRb)
     {
         //laser
@@ -35,7 +35,7 @@ public class Weapon {
     {
         projectileLineRenderer.enabled = false;
     }
-    // обработка выстрела по движущисчя объектам
+    
     public void ShootWalkingTarget(Vector3 shootPoint, Vector3 force, GameObject targetGo)
     {
         projectileLineRenderer.enabled = true;

@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/**
- * в начале уровня каждые 3секунды спавнятся из двух точек 10 движущихся целей 
- * 
- **/
+
 public class StartSecondLevel : MonoBehaviour {
 
     public GameObject[] UIelements;
